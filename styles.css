@@ -1,0 +1,124 @@
+body {
+    background-color: #121212;
+    color: #f5f5f5;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ff4500;
+    padding: 20px;
+    text-align: center;
+}
+
+.flaming-title {
+    font-family: 'Arial', sans-serif;
+    font-size: 4em;
+    color: #fff;
+    text-shadow: 
+        0 0 5px #ff4500,
+        0 0 10px #ff4500,
+        0 0 20px #ff4500,
+        0 0 40px #ff4500,
+        0 0 80px #ff4500,
+        0 0 120px #ff4500;
+    animation: flicker 2s infinite alternate;
+}
+
+@keyframes flicker {
+    0% { text-shadow: 
+        0 0 5px #ff4500,
+        0 0 10px #ff4500,
+        0 0 20px #ff4500,
+        0 0 40px #ff4500,
+        0 0 80px #ff4500,
+        0 0 120px #ff4500;
+    }
+    50% { text-shadow: 
+        0 0 10px #ff4500,
+        0 0 20px #ff4500,
+        0 0 40px #ff4500,
+        0 0 80px #ff4500,
+        0 0 120px #ff4500,
+        0 0 160px #ff4500;
+    }
+    100% { text-shadow: 
+        0 0 5px #ff4500,
+        0 0 10px #ff4500,
+        0 0 20px #ff4500,
+        0 0 40px #ff4500,
+        0 0 80px #ff4500,
+        0 0 120px #ff4500;
+    }
+}
+
+.container {
+    padding: 20px;
+}
+
+.anime-card {
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+}
+
+.anime-card img {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.anime-details {
+    flex: 1;
+}
+
+.seen-button {
+    background-color: #ff4500;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.seen-button:hover {
+    background-color: #ff6347;
+}
+
+.add-anime-form {
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.add-anime-form h2 {
+    margin: 0 0 20px 0;
+}
+
+.add-anime-form input, .add-anime-form button {
+    width: calc(100% - 22px);
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #121212;
+    color: #f5f5f5;
+}
+
+.add-anime-form button {
+    background-color: #ff4500;
+    border: none;
+    cursor: pointer;
+}
+
+.add-anime-form button:hover {
+    background-color: #ff6347;
+}
