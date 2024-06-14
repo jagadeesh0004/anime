@@ -80,9 +80,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const animeSynopsis = document.createElement('p');
         animeSynopsis.innerHTML = `<strong>Synopsis:</strong> ${anime.synopsis}`;
 
-        const animeCharacters = document.createElement('p');
-        animeCharacters.innerHTML = `<strong>Main Characters:</strong> ${anime.characters ? anime.characters.map(character => character.name).join(', ') : 'N/A'}`;
-
         const seenButton = document.createElement('button');
         seenButton.classList.add('seen-button');
         seenButton.textContent = 'Mark as Seen';
@@ -98,7 +95,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         animeDetails.appendChild(animeTitle);
         animeDetails.appendChild(animeSynopsis);
-        animeDetails.appendChild(animeCharacters);
         animeDetails.appendChild(seenButton);
 
         animeCard.appendChild(img);
