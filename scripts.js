@@ -17,9 +17,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function fetchAnimeData(animeName) {
-        const apiUrl = `https://api.jikan.moe/v3/search/anime?q=${encodeURIComponent(animeName)}&limit=1`;
+        const apiUrl = `https://api.myanimelist.net/v2/anime?q=${encodeURIComponent(animeName)}&limit=1`;
 
-        fetch(apiUrl)
+        fetch(apiUrl, {
+            headers: {
+                'X-MAL-CLIENT-ID': 'YOUR_CLIENT_ID' // Replace with your MyAnimeList API client ID
+            }
+        })
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -27,8 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 return response.json();
             })
             .then(data => {
-                if (data && data.results && data.results.length > 0) {
-                    const animeId = data.results[0].mal_id;
+                if (data && data.data && data.data.length > 0) {
+                    const animeId = data.data[0].node.id;
                     fetchAnimeDetails(animeId);
                 } else {
                     alert('Anime not found');
@@ -41,9 +45,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function fetchAnimeDetails(animeId) {
-        const apiUrl = `https://api.jikan.moe/v3/anime/${animeId}`;
+        const apiUrl = `https://api.myanimelist.net/v2/anime/${animeId}`;
 
-        fetch(apiUrl)
+        fetch(apiUrl, {
+            headers: {
+                'X-MAL-CLIENT-ID': 'YOUR_CLIENT_ID' // Replace with your MyAnimeList API client ID
+            }
+        })
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -68,14 +76,14 @@ document.addEventListener('DOMContentLoaded', function() {
         animeCard.classList.add('anime-card');
 
         const img = document.createElement('img');
-        img.src = anime.image_url;
+        img.src = anime.main_picture.medium;
         img.alt = anime.title;
 
         const animeDetails = document.createElement('div');
         animeDetails.classList.add('anime-details');
 
         const animeTitle = document.createElement('h2');
-        animeTitle.textContent = anime.title_english || anime.title;
+        animeTitle.textContent = anime.title;
 
         const animeSynopsis = document.createElement('p');
         animeSynopsis.innerHTML = `<strong>Synopsis:</strong> ${anime.synopsis}`;
