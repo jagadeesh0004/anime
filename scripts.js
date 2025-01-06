@@ -1,13 +1,21 @@
 async function searchAnime() {
     const query = document.getElementById('anime-search').value;
-    const response = await fetch(`https://api.jikan.moe/v4/anime?q=${query}`);
-    const data = await response.json();
-
-    if (data.data && data.data.length > 0) {
-        const anime = data.data[0];
-        displayAnime(anime);
-    } else {
-        document.getElementById('anime-details').innerHTML = '<p>No results found.</p>';
+    const loadingText = document.getElementById('loading');
+    loadingText.style.display = 'block';  // Show loading state
+    try {
+        const response = await fetch(`https://api.jikan.moe/v4/anime?q=${query}`);
+        const data = await response.json();
+        
+        if (data.data && data.data.length > 0) {
+            const anime = data.data[0];
+            displayAnime(anime);
+        } else {
+            document.getElementById('anime-details').innerHTML = '<p>No results found.</p>';
+        }
+    } catch (error) {
+        document.getElementById('anime-details').innerHTML = '<p>Error fetching anime details. Please try again later.</p>';
+    } finally {
+        loadingText.style.display = 'none';  // Hide loading state
     }
 }
 
