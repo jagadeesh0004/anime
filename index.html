@@ -3,24 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Anime</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Anime Search</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1 class="flaming-title">My Anime</h1>
-    </header>
     <div class="container">
-        <div id="anime-list">
-            <!-- Existing anime cards go here -->
-        </div>
-
-        <div class="add-anime-form">
-            <h2>Add a New Anime</h2>
-            <input type="text" id="anime-name" placeholder="Anime Name" required>
-            <button id="add-anime-button">Add Anime</button>
-        </div>
+        <h1>Anime Search</h1>
+        <input type="text" id="anime-search" placeholder="Enter anime name...">
+        <button onclick="searchAnime()">Search</button>
+        
+        <div id="anime-details" class="anime-details"></div>
     </div>
-    <script src="scripts.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
