@@ -13,18 +13,22 @@ async function searchAnime() {
 
 function displayAnime(anime) {
     const details = `
-        <div class="anime-card">
-            <img src="${anime.images.jpg.image_url}" alt="${anime.title}">
-            <h2>${anime.title}</h2>
-            <p><strong>Release Date:</strong> ${anime.aired.string}</p>
-            <p><strong>Rating:</strong> ${anime.score}</p>
-            <p>${anime.synopsis}</p>
-            <div class="stream-links">
-                <a href="https://www.crunchyroll.com/search?q=${anime.title}" target="_blank">Crunchyroll</a>
-                <a href="https://www.funimation.com/shows/?q=${anime.title}" target="_blank">Funimation</a>
-                <a href="https://www.netflix.com/search?q=${anime.title}" target="_blank">Netflix</a>
+        <div class="anime-details">
+            <div class="anime-card">
+                <img src="${anime.images.jpg.image_url}" alt="${anime.title}">
             </div>
-            <button onclick="scheduleAnime('${anime.title}')">Schedule for Later</button>
+            <div class="anime-info">
+                <h2>${anime.title}</h2>
+                <p><strong>Release Date:</strong> ${anime.aired.string}</p>
+                <p><strong>Rating:</strong> ${anime.score}</p>
+                <p>${anime.synopsis}</p>
+                <div class="stream-links">
+                    <a href="https://www.crunchyroll.com/search?q=${anime.title}" class="crunchyroll-icon" target="_blank"></a>
+                    <a href="https://www.funimation.com/shows/?q=${anime.title}" class="funimation-icon" target="_blank"></a>
+                    <a href="https://www.netflix.com/search?q=${anime.title}" class="netflix-icon" target="_blank"></a>
+                </div>
+                <button onclick="scheduleAnime('${anime.title}')">Schedule for Later</button>
+            </div>
         </div>
     `;
     document.getElementById('anime-details').innerHTML = details;
