@@ -3,17 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anime Search</title>
+    <title>AnimeHub</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Anime Search</h1>
-        <input type="text" id="anime-search" placeholder="Enter anime name...">
-        <button onclick="searchAnime()">Search</button>
-        
-        <div id="anime-details" class="anime-details"></div>
-    </div>
+    <header>
+        <div class="logo">AnimeHub</div>
+        <nav>
+            <a href="#search">Search</a>
+            <a href="#browse">Browse</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <img src="hero-image.jpg" alt="Anime showcase">
+        <h1>Your one-stop destination for all things anime</h1>
+        <p>Discover, explore, and find where to watch your favorite anime.</p>
+    </section>
+
+    <section id="search">
+        <h2>Search for Anime</h2>
+        <input type="text" id="anime-search" placeholder="Search by name, genre, year...">
+    </section>
+
+    <footer>
+        <p>&copy; 2025 AnimeHub. All rights reserved.</p>
+        <div class="socials">
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+
     <script src="scripts.js"></script>
 </body>
 </html>
