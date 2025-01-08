@@ -1,40 +1,44 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AnimeHub</title>
-    <link rel="stylesheet" href="styles.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="logo">AnimeHub</div>
         <nav>
-            <a href="#search">Search</a>
-            <a href="#browse">Browse</a>
-            <a href="#about">About</a>
+            <ul>
+                <li><a href="#search">Search</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
         </nav>
     </header>
-
     <section class="hero">
-        <img src="hero-image.jpg" alt="Anime showcase">
+        <img src="https://picsum.photos/seed/2rm_yxbLSIUpTY52kNsjW/512" alt="AnimeHub Hero">
         <h1>Your one-stop destination for all things anime</h1>
-        <p>Discover, explore, and find where to watch your favorite anime.</p>
     </section>
-
-    <section id="search">
-        <h2>Search for Anime</h2>
-        <input type="text" id="anime-search" placeholder="Search by name, genre, year...">
+    <section id="search" class="search-section">
+        <input type="text" placeholder="Search for anime series..." id="search-bar">
+        <button id="search-btn">Search</button>
+        <div id="anime-results"></div>
     </section>
-
     <footer>
-        <p>&copy; 2025 AnimeHub. All rights reserved.</p>
-        <div class="socials">
-            <a href="#">Twitter</a>
-            <a href="#">Instagram</a>
+        <p>&copy; 2023 AnimeHub. All Rights Reserved.</p>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="contact-info">
+            <p>Contact us: <a href="mailto:contact@animehub.com">contact@animehub.com</a></p>
         </div>
     </footer>
-
-    <script src="scripts.js"></script>
+    
 </body>
 </html>
